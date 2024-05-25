@@ -5,7 +5,7 @@ using UniversityProject.Services.Abstracts;
 namespace UniversityProject.Services.Implementation;
 public class StudentService : IStudentService
 {
-    public IStudentRepository _repo;
+    private IStudentRepository _repo;
     public StudentService(IStudentRepository repo)
     {
         _repo = repo;

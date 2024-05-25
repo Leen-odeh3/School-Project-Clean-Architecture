@@ -6,7 +6,7 @@ using UniversityProject.Infrustructure.Data;
 namespace UniversityProject.Infrustructure.GenericRepository;
 public class StudentRepository:IStudentRepository
 {
-    public readonly AppDbContext _context;
+    private readonly AppDbContext _context;
     public StudentRepository(AppDbContext context)
     {
        _context= context;
