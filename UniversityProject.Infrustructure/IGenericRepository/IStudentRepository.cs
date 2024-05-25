@@ -2,7 +2,7 @@
 using UniversityProject.Domain.Entities;
 
 namespace UniversityProject.Domain.IGenericRepository;
-public class IStudentRepository
+public interface IStudentRepository
 {
-    public Task<List<Student>> GetStudentsAsync;
+    public Task<List<Student>> GetStudentsAsync();
 }
