@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UniversityProject.Infrustructure;
 using UniversityProject.Infrustructure.Data;
 
 namespace UniversityProject.Api
@@ -18,6 +19,8 @@ namespace UniversityProject.Api
 
             builder.Services.AddDbContext<AppDbContext>(option =>
             option.UseSqlServer( builder.Configuration.GetConnectionString("Default")));
+
+            builder.Services.AddInfrastructureDependencies();
 
             var app = builder.Build();
 
