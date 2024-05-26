@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UniversityProject.Core;
 using UniversityProject.Infrustructure;
 using UniversityProject.Infrustructure.Data;
 using UniversityProject.Services;
@@ -20,7 +21,7 @@ public class Program
         option.UseSqlServer( builder.Configuration.GetConnectionString("Default")));
 
         builder.Services.AddInfrastructureDependencies()
-            .AddModuleServiceDependencies();
+            .AddModuleServiceDependencies().AddCoreDependencies();
 
         var app = builder.Build();
 
