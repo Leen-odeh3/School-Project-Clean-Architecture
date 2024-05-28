@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Feature\Student\Command\Handler\" />
-    <Folder Include="Feature\Student\Command\Models\" />
-    <Folder Include="Feature\Student\Command\Validation\" />
+    <PackageReference Include="MediatR" Version="6.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjectionFixed" Version="5.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="6.0.0" />
+    <Folder Include="Feature\Student\Command\" />
   </ItemGroup>
 
 </Project>

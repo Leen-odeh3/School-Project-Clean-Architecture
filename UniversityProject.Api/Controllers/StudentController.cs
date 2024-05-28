@@ -8,14 +8,16 @@ namespace UniversityProject.Api.Controllers;
 [ApiController]
 public class StudentController : ControllerBase
 {
-    private readonly IMediator _med;
-    public StudentController(IMediator med) {
-        _med = med;
-    }
-    [HttpGet("/Student/List")]
-    public async Task<IActionResult> GetStudents()
+    private readonly IMediator _mediator;
+    public StudentController(IMediator mediator)
     {
-        var res = await _med.Send(new GetAllStudentQuery());
-        return Ok(res);
+        _mediator = mediator;
     }
+    [HttpGet("/Students")]
+    public async Task<IActionResult> GetStudentList()
+    {
+        var response = await _mediator.Send(new GetListStudentQuery());
+        return Ok(response);
+    }
+
 }
