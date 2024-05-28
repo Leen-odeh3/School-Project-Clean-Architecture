@@ -9,6 +9,6 @@ public class Course
     [StringLength(500)]
     public string CourseName { get; set; }
     public DateTime Period { get; set; }
-    public virtual ICollection<StudentCourse> StudentsSubjects { get; set; }
+    public virtual ICollection<StudentCourse> StudentsCourses { get; set; }
     public virtual ICollection<DepartmentCourse> DepartmetsSubjects { get; set; }
 }
