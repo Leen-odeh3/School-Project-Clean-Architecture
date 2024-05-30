@@ -1,19 +1,29 @@
-﻿
-using Microsoft.EntityFrameworkCore.Storage;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using UniversityProject.Infrustructure.Data;
 using UniversityProject.Infrustructure.IGenericRepository;
 
 namespace UniversityProject.Infrustructure.GenericRepository;
 public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
 {
-    public Task<T> AddAsync(T entity)
+    private readonly AppDbContext _context;
+    public GenericRepositoryAsync(AppDbContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+    public async Task<T> AddAsync(T entity)
+    {
+        _context.Set<T>().Add(entity);
+        await _context.SaveChangesAsync();
+        return entity;
     }
 
-    public Task AddRangeAsync(ICollection<T> entities)
+
+    public async Task AddRangeAsync(ICollection<T> entities)
     {
-        throw new NotImplementedException();
+        await _context.Set<T>().AddRangeAsync(entities);
+        await _context.SaveChangesAsync();
     }
+
 
     public IDbContextTransaction BeginTransaction()
     {
@@ -24,21 +34,23 @@ public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : cl
     {
         throw new NotImplementedException();
     }
-
-    public Task DeleteAsync(T entity)
+    public async Task DeleteAsync(T entity)
     {
-        throw new NotImplementedException();
+        _context.Set<T>().Remove(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public Task DeleteRangeAsync(ICollection<T> entities)
+    public async Task DeleteRangeAsync(ICollection<T> entities)
     {
-        throw new NotImplementedException();
+        _context.Set<T>().RemoveRange(entities);
+        await _context.SaveChangesAsync();
     }
 
-    public Task<T> GetByIdAsync(int id)
+    public async Task<T> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Set<T>().FindAsync(id);
     }
+
 
     public IQueryable<T> GetTableAsTracking()
     {
@@ -55,18 +67,21 @@ public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : cl
         throw new NotImplementedException();
     }
 
-    public Task SaveChangesAsync()
+    public async Task SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        await _context.SaveChangesAsync();
     }
 
-    public Task UpdateAsync(T entity)
+    public async Task UpdateAsync(T entity)
     {
-        throw new NotImplementedException();
+        _context.Set<T>().Update(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public Task UpdateRangeAsync(ICollection<T> entities)
+    public async Task UpdateRangeAsync(ICollection<T> entities)
     {
-        throw new NotImplementedException();
+        _context.Set<T>().UpdateRange(entities);
+        await _context.SaveChangesAsync();
     }
+
 }
