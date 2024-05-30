@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Storage;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using UniversityProject.Infrustructure.Data;
 using UniversityProject.Infrustructure.IGenericRepository;
 
@@ -24,16 +25,6 @@ public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : cl
         await _context.SaveChangesAsync();
     }
 
-
-    public IDbContextTransaction BeginTransaction()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Commit()
-    {
-        throw new NotImplementedException();
-    }
     public async Task DeleteAsync(T entity)
     {
         _context.Set<T>().Remove(entity);
@@ -54,17 +45,28 @@ public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : cl
 
     public IQueryable<T> GetTableAsTracking()
     {
-        throw new NotImplementedException();
+        return _context.Set<T>().AsQueryable();
     }
 
     public IQueryable<T> GetTableNoTracking()
     {
-        throw new NotImplementedException();
+        return _context.Set<T>().AsNoTracking().AsQueryable();
+
+    }
+
+    public IDbContextTransaction BeginTransaction()
+    {
+        return _context.Database.BeginTransaction();
+    }
+
+    public void Commit()
+    {
+        _context.Database.CommitTransaction();
     }
 
     public void RollBack()
     {
-        throw new NotImplementedException();
+        _context.Database.RollbackTransaction();
     }
 
     public async Task SaveChangesAsync()
