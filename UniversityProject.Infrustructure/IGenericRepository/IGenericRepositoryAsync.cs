@@ -5,7 +5,7 @@ namespace UniversityProject.Infrustructure.IGenericRepository;
 public interface IGenericRepositoryAsync<T> where T : class
 {
     Task DeleteRangeAsync(ICollection<T> entities);
-    Task<T> GetByIdAsync(int id);
+    Task<T> GetByIdAsync(int id); 
     Task SaveChangesAsync();
     IDbContextTransaction BeginTransaction();
     void Commit();

@@ -16,4 +16,10 @@ public class StudentRepository: GenericRepositoryAsync<Student> , IStudentReposi
        return await _context.Include(x=>x.Department).ToListAsync();
 
     }
+    public async Task<Student> GetByIdAsync(int id)
+    {
+        return await _context.Include(x=>x.Department).FirstOrDefaultAsync(xx => xx.StudentID == id);
+    }
+
+
 }
