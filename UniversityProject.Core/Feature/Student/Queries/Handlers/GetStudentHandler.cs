@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
+using UniversityProject.Core.Bases;
 using UniversityProject.Core.Feature.Student.Queries.Models;
 using UniversityProject.Core.Feature.Student.Queries.Results;
 using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Core.Feature.Student.Queries.Handlers;
-public class GetStudentHandler : IRequestHandler<GetListStudentQuery, List<ListStudent>>
+public class GetStudentHandler : IRequestHandler<GetListStudentQuery, Response<List<ListStudent>>>
 {
     private readonly IStudentService _studentService;
     private readonly IMapper _mapper;
@@ -14,13 +15,12 @@ public class GetStudentHandler : IRequestHandler<GetListStudentQuery, List<ListS
         _studentService = studentService;
         _mapper = mapper;
     }
-    public async Task<List<ListStudent>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
+    public async Task<Response<List<ListStudent>>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
     {
-        var students = await _studentService.GetStudentsListAsync();
- 
-        var res = _mapper.Map<List<ListStudent>>(students);
-
-        return res;
+        var studentList = await _studentService.GetStudentsListAsync();
+        var studentListMapper = _mapper.Map<List<ListStudent>>(studentList);
+        var responseHandler = new ResponseHandler();
+        var result = responseHandler.Success(studentListMapper);
+        return result;
     }
-
 }
