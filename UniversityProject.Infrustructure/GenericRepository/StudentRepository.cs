@@ -4,16 +4,16 @@ using UniversityProject.Domain.IGenericRepository;
 using UniversityProject.Infrustructure.Data;
 
 namespace UniversityProject.Infrustructure.GenericRepository;
-public class StudentRepository:IStudentRepository
+public class StudentRepository: GenericRepositoryAsync<Student> , IStudentRepository 
 {
-    private readonly AppDbContext _context;
-    public StudentRepository(AppDbContext context)
+    private readonly DbSet<Student> _context;
+    public StudentRepository(AppDbContext context) :base(context)
     {
-       _context= context;
+       _context= context.Set<Student>();
     }
     public async Task<List<Student>> GetStudentsAsync()
     {
-       return await _context.Students.Include(x=>x.Department).ToListAsync();
+       return await _context.Include(x=>x.Department).ToListAsync();
 
     }
 }
