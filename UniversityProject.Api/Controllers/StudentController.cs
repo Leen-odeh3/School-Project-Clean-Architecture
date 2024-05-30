@@ -20,4 +20,11 @@ public class StudentController : ControllerBase
         return Ok(response);
     }
 
+    [HttpGet("/Students/{id}")]
+    public async Task<IActionResult> GetStudentByID([FromRoute]int id)
+    {
+        var response = await _mediator.Send(new GetStudentByIdQuery(id));
+        return Ok(response);
+    }
+
 }
