@@ -2,7 +2,6 @@
 using MediatR;
 using UniversityProject.Core.Feature.Student.Queries.Models;
 using UniversityProject.Core.Feature.Student.Queries.Results;
-using UniversityProject.Domain.Entities;
 using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Core.Feature.Student.Queries.Handlers;
@@ -18,10 +17,7 @@ public class GetStudentHandler : IRequestHandler<GetListStudentQuery, List<ListS
     public async Task<List<ListStudent>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
     {
         var students = await _studentService.GetStudentsListAsync();
-        var result = students.Select(student => new ListStudent
-        {
-        }).ToList();
-
+ 
         var res = _mapper.Map<List<ListStudent>>(students);
 
         return res;

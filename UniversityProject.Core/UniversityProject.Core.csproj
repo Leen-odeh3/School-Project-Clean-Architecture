@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Feature\Student\Command\" />
+    <Folder Include="Mapping\Students\CommandMapping\" />
   </ItemGroup>
 
 </Project>
