@@ -5,7 +5,6 @@ using static UniversityProject.Domain.AppMetaData.Router;
 
 namespace UniversityProject.Api.Controllers;
 
-[Route("api/[controller]")]
 [ApiController]
 public class StudentController : ControllerBase
 {
