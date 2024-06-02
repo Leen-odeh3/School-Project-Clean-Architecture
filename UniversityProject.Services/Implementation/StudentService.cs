@@ -1,4 +1,5 @@
-﻿using UniversityProject.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using UniversityProject.Domain.Entities;
 using UniversityProject.Domain.IGenericRepository;
 using UniversityProject.Infrustructure.GenericRepository;
 using UniversityProject.Services.Abstracts;
@@ -15,6 +16,7 @@ public class StudentService : IStudentService
     public async Task<Student> GetByIdAsync(int id)
     {
         var student = await _repo.GetByIdAsync(id);
+
         return student;
     }
 
