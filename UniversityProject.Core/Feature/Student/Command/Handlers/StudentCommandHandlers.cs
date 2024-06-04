@@ -16,12 +16,6 @@ public class StudentCommandHandlers : ResponseHandler, IRequestHandler<AddStuden
     }
     async Task<Response<ListStudent>> IRequestHandler<AddStudentCommand, Response<ListStudent>>.Handle(AddStudentCommand request, CancellationToken cancellationToken)
     {
-        var addedStudent = await _studentService.AddStudentAsync(request.StudentID, request.Name, request.DepartmentName, request.Phone);
-
-        // Create a response with the added student
-        var response = new Response<ListStudent>(addedStudent);
-
-        // Return the response
-        return response;
+       
     }
 }

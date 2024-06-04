@@ -6,5 +6,5 @@ public interface IStudentService
     public Task<List<Student>> GetStudentsListAsync();
     public Task<Student> GetByIdAsync(int id);
 
-    public Task<Student> AddStudentAsync(int studentID, Student student);
+    public Task<Student> AddStudentAsync(Student student);
 }
