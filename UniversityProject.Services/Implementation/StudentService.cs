@@ -11,12 +11,6 @@ public class StudentService : IStudentService
         _repo = repo;
     }
 
-    public async Task<Student> AddStudentAsync(Student student)
-    {
-      var stu = _repo.AddAsync(student);
-        return await stu;
-    }
-
     public async Task<Student> GetByIdAsync(int id)
     {
         var student = await _repo.GetByIdAsync(id);
@@ -27,5 +21,16 @@ public class StudentService : IStudentService
     public async Task<List<Student>> GetStudentsListAsync()
     {
         return await _repo.GetStudentsAsync();
+    }
+
+    async Task<string> IStudentService.AddStudentAsync(Student student)
+    {
+       var studentAdded = _repo.GetTableNoTracking().Where(x => x.Name.Equals(student.Name)).FirstOrDefault();
+
+        if(studentAdded != null) return "Student Exist";
+
+       await _repo.AddAsync(studentAdded);
+
+        return "Succsess";
     }
 }
