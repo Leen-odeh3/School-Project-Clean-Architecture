@@ -38,4 +38,10 @@ public class StudentController : AppControllerBase
         return NewResult(response);
     }
 
+    [HttpDelete(StudentRouting.Delete)]
+    public async Task<IActionResult> DeleteStudentAsync([FromRoute] int id)
+    {
+        return NewResult(await Mediator.Send(new DeleteStudentCommand(id)));
+    }
+
 }
