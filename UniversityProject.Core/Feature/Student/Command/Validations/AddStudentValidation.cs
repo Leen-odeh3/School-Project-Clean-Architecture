@@ -40,7 +40,7 @@ public class AddStudentValidation : AbstractValidator<AddStudentCommand>
     {
         RuleFor(x => x.Name)
                        .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameExist(Key))
-                       .WithMessage("");
+                       .WithMessage("Name is Exist");
        
     }
 
