@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
+using UniversityProject.Domain.Entities;
 using MediatR;
 using UniversityProject.Core.Bases;
 using UniversityProject.Core.Feature.Student.Command.Models;
-using UniversityProject.Domain.Entities;
 using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Core.Feature.Student.Command.Handlers;
-public class StudentCommandHandlers : ResponseHandler, IRequestHandler<AddStudentCommand, Response<String>>
+public class StudentCommandHandlers : ResponseHandler, 
+                                      IRequestHandler<AddStudentCommand, Response<String>>
 {
 
     private readonly IStudentService _studentService;
@@ -18,17 +19,16 @@ public class StudentCommandHandlers : ResponseHandler, IRequestHandler<AddStuden
         _mapper = mapper;
     }
 
-    public Task<Response<string>> Handle(AddStudentCommand request, CancellationToken cancellationToken)
+    public async Task<Response<string>> Handle(AddStudentCommand request, CancellationToken cancellationToken)
     {
+        var newStudentEntity = _mapper.Map<UniversityProject.Domain.Entities.Student>(request);
 
-        var map = _mapper.Map(Student)<request> ;
-        var result = _studentService.AddStudentAsync(map);
+        var result = await _studentService.AddStudentAsync(newStudentEntity);
 
-        if (result.Succeeded)
-        {
-            return result;
+        var response = result != null ? Success("Student added successfully.") : BadRequest<string>("Failed to add student.");
 
-        }
+        return response;
     }
+
 
 }

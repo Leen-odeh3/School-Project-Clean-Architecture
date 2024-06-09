@@ -7,5 +7,4 @@ public interface IStudentService
     public Task<Student> GetByIdAsync(int id);
 
     public Task<String> AddStudentAsync(Student student);
-    object AddStudentAsync(UniversityProject.Core.Feature.Student.Command.Models.AddStudentCommand request);
 }

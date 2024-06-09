@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using UniversityProject.Core.Feature.Student.Command.Models;
 using UniversityProject.Core.Feature.Student.Queries.Models;
 using static UniversityProject.Domain.AppMetaData.Router;
 
@@ -25,6 +26,21 @@ public class StudentController : ControllerBase
     {
         var response = await _mediator.Send(new GetStudentByIdQuery(id));
         return Ok(response);
+    }
+
+    [HttpPost(StudentRouting.Create)]
+    public async Task<IActionResult> AddStudentAsync([FromBody] AddStudentCommand model)
+    {
+        var response = await _mediator.Send(model);
+
+        if (response.Succeeded)
+        {
+            return Created("Student added successfully", response.Data);
+        }
+        else
+        {
+            return BadRequest(response.Message);
+        }
     }
 
 }
