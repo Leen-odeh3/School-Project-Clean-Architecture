@@ -1,6 +1,6 @@
-﻿using UniversityProject.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using UniversityProject.Domain.Entities;
 using UniversityProject.Domain.IGenericRepository;
-using UniversityProject.Infrustructure.GenericRepository;
 using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Services.Implementation;
@@ -39,6 +39,13 @@ public class StudentService : IStudentService
     {
         var student = _repo.GetTableNoTracking().Where(x => x.Name.Equals(name)).FirstOrDefault();
         if (student is null) return false;
+        return true;
+    }
+
+    public async Task<bool> IsNameExistExcludeSelf(string name, int id)
+    {
+        var student = await _repo.GetTableNoTracking().Where(x => x.Name.Equals(name) & !x.StudentID.Equals(id)).FirstOrDefaultAsync();
+        if (student == null) return false;
         return true;
     }
 
