@@ -8,6 +8,7 @@ public partial class StudentProfile : Profile
         GetStudentListMapping();
         GetStudentByIdMapping();
         addStudentMapping();
+        EditStudentCommandMapping();
     }
 
 }

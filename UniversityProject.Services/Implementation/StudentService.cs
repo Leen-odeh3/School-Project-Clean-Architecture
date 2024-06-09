@@ -1,6 +1,7 @@
-﻿using UniversityProject.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Serilog;
+using UniversityProject.Domain.Entities;
 using UniversityProject.Domain.IGenericRepository;
-using UniversityProject.Infrustructure.GenericRepository;
 using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Services.Implementation;
@@ -42,4 +43,33 @@ public class StudentService : IStudentService
         return true;
     }
 
+    public async Task<bool> IsNameExistExcludeSelf(string name, int id)
+    {
+        var student = await _repo.GetTableNoTracking().Where(x => x.Name.Equals(name) & !x.StudentID.Equals(id)).FirstOrDefaultAsync();
+        if (student == null) return false;
+        return true;
+    }
+
+    public async Task<string> EditStudentAsync(Student student)
+    {
+        await _repo.UpdateAsync(student);
+        return "Success";
+    }
+
+    public async Task<string> DeleteStudentAsync(Student student)
+    {
+        var trans = _repo.BeginTransaction();
+        try
+        {
+            await _repo.DeleteAsync(student);
+            await trans.CommitAsync();
+            return "Success";
+        }
+        catch (Exception ex)
+        {
+            await trans.RollbackAsync();
+            Log.Error(ex.Message);
+            return "Falied";
+        }
+    }
 }
