@@ -8,7 +8,8 @@ using UniversityProject.Services.Abstracts;
 namespace UniversityProject.Core.Feature.Student.Command.Handlers;
 public class StudentCommandHandlers : ResponseHandler, 
                                       IRequestHandler<AddStudentCommand, Response<String>>,
-                                      IRequestHandler<EditStudentCommand,Response<String>>
+                                      IRequestHandler<EditStudentCommand,Response<String>>,
+                                      IRequestHandler<DeleteStudentCommand,Response<String>>
 {
 
     private readonly IStudentService _studentService;
@@ -42,6 +43,16 @@ public class StudentCommandHandlers : ResponseHandler,
         var result = await _studentService.EditStudentAsync(studentmapper);
  
         if (result is "Success") return Success("edit student success");
+        else return BadRequest<string>();
+    }
+
+    public async Task<Response<string>> Handle(DeleteStudentCommand request, CancellationToken cancellationToken)
+    {
+        var student = await _studentService.GetByIdAsync(request.Id);
+        if (student is null) return NotFound<string>();
+
+        var result = await _studentService.DeleteStudentAsync(student);
+        if (result == "Success") return Deleted<string>();
         else return BadRequest<string>();
     }
 }
