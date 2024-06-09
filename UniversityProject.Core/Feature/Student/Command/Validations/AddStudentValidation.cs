@@ -6,12 +6,11 @@ namespace UniversityProject.Core.Feature.Student.Command.Validations;
 
 public class AddStudentValidation : AbstractValidator<AddStudentCommand>
 {
-    private readonly IStudentService _studentService;
-    public AddStudentValidation(IStudentService studentService)
+    public AddStudentValidation()
     {
-        _studentService = studentService;
+        ApplyCustomValidationRuels();
+        ApplyValidationsRules();
     }
-
     public void ApplyValidationsRules()
     {
         RuleFor(x => x.Name)
@@ -32,4 +31,10 @@ public class AddStudentValidation : AbstractValidator<AddStudentCommand>
             .NotEmpty().WithMessage("phone must not be empty")
             .NotNull();
     }
+
+    public void ApplyCustomValidationRuels()
+    {
+
+    }
+
 }
