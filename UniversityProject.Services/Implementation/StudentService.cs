@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Serilog;
 using UniversityProject.Domain.Entities;
 using UniversityProject.Domain.IGenericRepository;
 using UniversityProject.Services.Abstracts;
@@ -49,4 +50,26 @@ public class StudentService : IStudentService
         return true;
     }
 
+    public async Task<string> EditStudentAsync(Student student)
+    {
+        await _repo.UpdateAsync(student);
+        return "Success";
+    }
+
+    public async Task<string> DeleteStudentAsync(Student student)
+    {
+        var trans = _repo.BeginTransaction();
+        try
+        {
+            await _repo.DeleteAsync(student);
+            await trans.CommitAsync();
+            return "Success";
+        }
+        catch (Exception ex)
+        {
+            await trans.RollbackAsync();
+            Log.Error(ex.Message);
+            return "Falied";
+        }
+    }
 }

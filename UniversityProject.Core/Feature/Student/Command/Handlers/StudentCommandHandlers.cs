@@ -7,7 +7,8 @@ using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Core.Feature.Student.Command.Handlers;
 public class StudentCommandHandlers : ResponseHandler, 
-                                      IRequestHandler<AddStudentCommand, Response<String>>
+                                      IRequestHandler<AddStudentCommand, Response<String>>,
+                                      IRequestHandler<EditStudentCommand,Response<String>>
 {
 
     private readonly IStudentService _studentService;
@@ -30,5 +31,17 @@ public class StudentCommandHandlers : ResponseHandler,
         return response;
     }
 
+    public async Task<Response<string>> Handle(EditStudentCommand request, CancellationToken cancellationToken)
+    {
+        var student = await _studentService.GetByIdAsync(request.StudentID);
 
+        if (student is null) return NotFound<string>();
+
+        var studentmapper = _mapper.Map(request, student);
+
+        var result = await _studentService.EditStudentAsync(studentmapper);
+ 
+        if (result is "Success") return Success("edit student success");
+        else return BadRequest<string>();
+    }
 }
