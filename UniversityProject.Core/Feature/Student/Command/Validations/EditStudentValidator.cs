@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using Microsoft.Extensions.Localization;
 using UniversityProject.Core.Feature.Student.Command.Models;
 using UniversityProject.Services.Abstracts;
 
@@ -39,9 +38,8 @@ public class EditStudentValidator : AbstractValidator<EditStudentCommand>
     {
         RuleFor(x => x.Name)
             .MustAsync(async (model, Key, CancellationToken) => !await _studentService.IsNameExistExcludeSelf(Key, model.StudentID))
-            .WithMessage("");
+            .WithMessage("update success");
      
     }
-
     #endregion
 }
