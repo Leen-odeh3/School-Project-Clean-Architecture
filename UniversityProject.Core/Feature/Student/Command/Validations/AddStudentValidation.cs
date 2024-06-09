@@ -1,15 +1,19 @@
 ﻿using FluentValidation;
 using UniversityProject.Core.Feature.Student.Command.Models;
 using UniversityProject.Services.Abstracts;
+using UniversityProject.Services.Implementation;
 
 namespace UniversityProject.Core.Feature.Student.Command.Validations;
 
 public class AddStudentValidation : AbstractValidator<AddStudentCommand>
 {
-    public AddStudentValidation()
+    private readonly IStudentService _studentService;
+
+    public AddStudentValidation(IStudentService studentService)
     {
         ApplyCustomValidationRuels();
         ApplyValidationsRules();
+        _studentService = studentService;
     }
     public void ApplyValidationsRules()
     {
@@ -34,7 +38,10 @@ public class AddStudentValidation : AbstractValidator<AddStudentCommand>
 
     public void ApplyCustomValidationRuels()
     {
-
+        RuleFor(x => x.Name)
+                       .MustAsync(async (Key, CancellationToken) => !await _studentService.IsNameExist(Key))
+                       .WithMessage("");
+       
     }
 
 }

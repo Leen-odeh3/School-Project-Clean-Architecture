@@ -1,9 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
-using Microsoft.Extensions.Localization;
 
 namespace UniversityProject.Core.Behaviors;
-
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
       where TRequest : IRequest<TResponse>
 {
