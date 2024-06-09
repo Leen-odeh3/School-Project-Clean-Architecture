@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UniversityProject.Core;
+using UniversityProject.Core.MiddleWare;
 using UniversityProject.Infrustructure;
 using UniversityProject.Infrustructure.Data;
 using UniversityProject.Services;
@@ -34,9 +35,9 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
-
         app.MapControllers();
+
+        app.UseMiddleware<ErrorHandlerMiddleware>();
 
         app.Run();
     }

@@ -1,5 +1,6 @@
 ﻿using UniversityProject.Domain.Entities;
 using UniversityProject.Domain.IGenericRepository;
+using UniversityProject.Infrustructure.GenericRepository;
 using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Services.Implementation;
@@ -32,6 +33,13 @@ public class StudentService : IStudentService
         await _repo.AddAsync(student);
 
         return "Success";
+    }
+
+    public async Task<bool> IsNameExist(string name)
+    {
+        var student = _repo.GetTableNoTracking().Where(x => x.Name.Equals(name)).FirstOrDefault();
+        if (student is null) return false;
+        return true;
     }
 
 }
