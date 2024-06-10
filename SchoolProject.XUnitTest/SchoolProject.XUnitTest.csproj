@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolProject.Core\SchoolProject.Core.csproj" />
-    <ProjectReference Include="..\SchoolProject.Data\SchoolProject.Data.csproj" />
+    <ProjectReference Include="..\SchoolProject.Data\SchoolProject.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
