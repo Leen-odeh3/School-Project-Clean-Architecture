@@ -7,27 +7,29 @@ public class Instructor
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int InstructorID { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Address { get; set; }
-    public string Degree { get; set; }
-    public decimal Salary { get; set; }
+    public int InstructorId { get; set; }
+    public string? Name { get; set; }
+    public string? Address { get; set; }
+    public string? Position { get; set; }
+    public int? SupervisorId { get; set; }
+    public decimal? Salary { get; set; }
     public string? Image { get; set; }
+    public int DepartmentID { get; set; }
 
-    [ForeignKey("TeachingDepartment")]
-    public int TeachingDepartmentID { get; set; }
+    [ForeignKey(nameof(DepartmentID))]
+    [InverseProperty("Instructors")]
+    public Department? department { get; set; }
 
-    [ForeignKey("ManagingDepartment")]
-    public int? ManagingDepartmentID { get; set; }
+    [InverseProperty("Instructor")]
+    public Department? departmentManager { get; set; }
 
-    [ForeignKey("HeadOfDepartment")]
-    public int? HeadOfDepartmentID { get; set; }
 
-    public virtual Department TeachingDepartment { get; set; }
-    public virtual Department ManagingDepartment { get; set; }
-    public virtual Instructor HeadOfDepartment { get; set; }
+    [ForeignKey(nameof(SupervisorId))]
+    [InverseProperty("Instructors")]
+    public Instructor? Supervisor { get; set; }
+    [InverseProperty("Supervisor")]
+    public virtual ICollection<Instructor> Instructors { get; set; }
 
-    public virtual ICollection<InstructorCourse> InstructorCourses { get; set; }
-    public virtual ICollection<Department> HeadDepartments { get; set; }
+    [InverseProperty("instructor")]
+    public virtual ICollection<InstructorCourse> InstructorCourse { get; set; }
 }

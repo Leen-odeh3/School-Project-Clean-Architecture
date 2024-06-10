@@ -9,10 +9,10 @@ public class Department
 
     [StringLength(500)]
     public string DeptName { get; set; }
-    public int? ManagerID { get; set; }
+    public int? InsManager { get; set; }
     public virtual ICollection<Student> Students { get; set; }
     public virtual ICollection<DepartmentCourse> DepartmentCourses { get; set; }
 
     public virtual ICollection<Instructor> Instructors { get; set; }
-    public virtual Instructor Manager { get; set; }
+    public virtual Instructor Instructor { get; set; }
 }
