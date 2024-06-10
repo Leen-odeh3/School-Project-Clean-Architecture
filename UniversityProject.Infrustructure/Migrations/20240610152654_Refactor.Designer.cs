@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversityProject.Infrustructure.Data;
 
@@ -11,9 +12,10 @@ using UniversityProject.Infrustructure.Data;
 namespace UniversityProject.Infrustructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240610152654_Refactor")]
+    partial class Refactor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,6 +87,74 @@ namespace UniversityProject.Infrustructure.Migrations
                     b.HasIndex("DepartmentID");
 
                     b.ToTable("DepartmentCourses");
+                });
+
+            modelBuilder.Entity("UniversityProject.Domain.Entities.Instructor", b =>
+                {
+                    b.Property<int>("InstructorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InstructorID"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DepartmentID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Salary")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("SupervisorId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("departmentManagerDepartmentID")
+                        .HasColumnType("int");
+
+                    b.HasKey("InstructorID");
+
+                    b.HasIndex("DepartmentID");
+
+                    b.HasIndex("SupervisorId");
+
+                    b.HasIndex("departmentManagerDepartmentID")
+                        .IsUnique()
+                        .HasFilter("[departmentManagerDepartmentID] IS NOT NULL");
+
+                    b.ToTable("Instructors");
+                });
+
+            modelBuilder.Entity("UniversityProject.Domain.Entities.InstructorCourse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CourseID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InstructorID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseID");
+
+                    b.HasIndex("InstructorID");
+
+                    b.ToTable("InstructorCourse");
                 });
 
             modelBuilder.Entity("UniversityProject.Domain.Entities.Student", b =>
@@ -162,6 +232,48 @@ namespace UniversityProject.Infrustructure.Migrations
                     b.Navigation("Department");
                 });
 
+            modelBuilder.Entity("UniversityProject.Domain.Entities.Instructor", b =>
+                {
+                    b.HasOne("UniversityProject.Domain.Entities.Department", "department")
+                        .WithMany("Instructors")
+                        .HasForeignKey("DepartmentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UniversityProject.Domain.Entities.Instructor", "Supervisor")
+                        .WithMany("Instructors")
+                        .HasForeignKey("SupervisorId");
+
+                    b.HasOne("UniversityProject.Domain.Entities.Department", "departmentManager")
+                        .WithOne("Instructor")
+                        .HasForeignKey("UniversityProject.Domain.Entities.Instructor", "departmentManagerDepartmentID");
+
+                    b.Navigation("Supervisor");
+
+                    b.Navigation("department");
+
+                    b.Navigation("departmentManager");
+                });
+
+            modelBuilder.Entity("UniversityProject.Domain.Entities.InstructorCourse", b =>
+                {
+                    b.HasOne("UniversityProject.Domain.Entities.Course", "Course")
+                        .WithMany("InstructorCourse")
+                        .HasForeignKey("CourseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UniversityProject.Domain.Entities.Instructor", "Instructor")
+                        .WithMany("InstructorCourse")
+                        .HasForeignKey("InstructorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Instructor");
+                });
+
             modelBuilder.Entity("UniversityProject.Domain.Entities.Student", b =>
                 {
                     b.HasOne("UniversityProject.Domain.Entities.Department", "Department")
@@ -196,6 +308,8 @@ namespace UniversityProject.Infrustructure.Migrations
                 {
                     b.Navigation("DepartmetsSubjects");
 
+                    b.Navigation("InstructorCourse");
+
                     b.Navigation("StudentsCourses");
                 });
 
@@ -203,7 +317,19 @@ namespace UniversityProject.Infrustructure.Migrations
                 {
                     b.Navigation("DepartmentCourses");
 
+                    b.Navigation("Instructor")
+                        .IsRequired();
+
+                    b.Navigation("Instructors");
+
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("UniversityProject.Domain.Entities.Instructor", b =>
+                {
+                    b.Navigation("InstructorCourse");
+
+                    b.Navigation("Instructors");
                 });
 #pragma warning restore 612, 618
         }

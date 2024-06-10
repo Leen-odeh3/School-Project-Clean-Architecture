@@ -11,5 +11,4 @@ public class Course
     public DateTime Period { get; set; }
     public virtual ICollection<StudentCourse> StudentsCourses { get; set; }
     public virtual ICollection<DepartmentCourse> DepartmetsSubjects { get; set; }
-    public virtual ICollection<InstructorCourse> InstructorCourse { get; set; }
 }

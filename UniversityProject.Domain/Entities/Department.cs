@@ -13,6 +13,4 @@ public class Department
     public virtual ICollection<Student> Students { get; set; }
     public virtual ICollection<DepartmentCourse> DepartmentCourses { get; set; }
 
-    public virtual ICollection<Instructor> Instructors { get; set; }
-    public virtual Instructor Instructor { get; set; }
 }

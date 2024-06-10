@@ -11,7 +11,8 @@ public class AppDbContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+       
+
     }
 
     public DbSet<Student> Students { get; set; }
@@ -19,6 +20,4 @@ public class AppDbContext : DbContext
     public DbSet<Course> Courses { get; set; }
     public DbSet<StudentCourse> StudentCourses { get; set; }
     public DbSet<DepartmentCourse> DepartmentCourses { get; set; }
-    public DbSet<Instructor> Instructors { get; set; }
-    public DbSet<InstructorCourse> InstructorCourse { get; set; }
 }
