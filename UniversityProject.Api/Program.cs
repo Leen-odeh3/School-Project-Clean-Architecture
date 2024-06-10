@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using UniversityProject.Core;
 using UniversityProject.Core.MiddleWare;
 using UniversityProject.Infrustructure;
@@ -23,6 +25,21 @@ public class Program
 
         builder.Services.AddInfrastructureDependencies()
             .AddModuleServiceDependencies().AddCoreDependencies();
+
+        #region AllowCORS
+        var CORS = "_cors";
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy(name: CORS,
+                              policy =>
+                              {
+                                  policy.AllowAnyHeader();
+                                  policy.AllowAnyMethod();
+                                  policy.AllowAnyOrigin();
+                              });
+        });
+
+        #endregion
 
         var app = builder.Build();
 

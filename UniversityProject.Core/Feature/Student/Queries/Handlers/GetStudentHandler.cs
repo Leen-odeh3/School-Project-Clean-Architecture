@@ -26,7 +26,7 @@ public class GetStudentHandler : ResponseHandler ,
         var studentListMapper = _mapper.Map<List<ListStudent>>(studentList);
         
         var result = Success(studentListMapper);
-
+        result.Meta = new { count = studentListMapper.Count, maxLength=studentListMapper.Max(c=>c.Name.Length)};
         return result;
     }
 
@@ -52,6 +52,7 @@ public class GetStudentHandler : ResponseHandler ,
         var PaginatedList = await _mapper.ProjectTo<GetStudentPaginatedListResponse>(FilterQuery).ToPaginatedListAsync(request.PageNumber, request.PageSize);
         PaginatedList.Meta = new { Count = PaginatedList.Data.Count() };
 
+        PaginatedList.Meta = new { count = PaginatedList.Data.Count };
         return PaginatedList;
     }
 }
