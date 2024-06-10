@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SchoolProject.Api.Base;
-using SchoolProject.Core.Features.Authentication.Commands.Models;
-using SchoolProject.Core.Features.Authentication.Queries.Models;
-using SchoolProject.Data.AppMetaData;
+using UniversityProject.Api.Base;
+using UniversityProject.Core.Features.Authentication.Commands.Models;
+using UniversityProject.Core.Features.Authentication.Queries.Models;
+using UniversityProject.Data.AppMetaData;
 
-namespace SchoolProject.Api.Controllers
+namespace UniversityProject.Api.Controllers
 {
 
     [ApiController]

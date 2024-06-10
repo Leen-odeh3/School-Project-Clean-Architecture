@@ -2,8 +2,8 @@
 using EntityFrameworkCore.Testing.Common;
 using FluentAssertions;
 using Moq;
-using SchoolProject.Core.Wrappers;
-using SchoolProject.Data.Entities;
+using UniversityProject.Core.Wrappers;
+using UniversityProject.Data.Entities;
 using SchoolProject.XUnitTest.Wrappers.Interfaces;
 
 namespace SchoolProject.XUnitTest.ServicesTest.ExtensionMethod
