@@ -9,7 +9,32 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> option) :base(option) 
     { 
     }
-    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<DepartmentCourse>()
+            .HasKey(dc => new { dc.DepartmentID, dc.CourseID });
+
+        modelBuilder.Entity<InstructorCourse>()
+               .HasKey(ic => new { ic.InstructorID, ic.CourseID });
+
+        modelBuilder.Entity<StudentCourse>()
+              .HasKey(sc => new { sc.StudentID, sc.CourseID });
+
+        modelBuilder.Entity<Department>()
+               .HasMany(d => d.Instructors)
+               .WithOne(i => i.TeachingDepartment) 
+               .HasForeignKey(i => i.ManagingDepartmentID)
+               .IsRequired(false);
+
+        modelBuilder.Entity<Department>()
+      .HasOne(d => d.Manager)
+      .WithOne()
+      .HasForeignKey<Department>(d => d.ManagerID)
+      .IsRequired(false);
+
+        base.OnModelCreating(modelBuilder);
+    }
+
     public DbSet<Student> Students { get; set; }
     public DbSet<Department> Departments { get; set; }
     public DbSet<Course> Courses { get; set; }
