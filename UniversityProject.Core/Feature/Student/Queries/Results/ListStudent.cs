@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+﻿
 namespace UniversityProject.Core.Feature.Student.Queries.Results;
 public class ListStudent
 {

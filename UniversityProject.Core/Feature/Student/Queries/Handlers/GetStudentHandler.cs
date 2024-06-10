@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using MediatR;
-using System.Linq.Expressions;
 using UniversityProject.Core.Bases;
 using UniversityProject.Core.Feature.Student.Queries.Models;
 using UniversityProject.Core.Feature.Student.Queries.Results;

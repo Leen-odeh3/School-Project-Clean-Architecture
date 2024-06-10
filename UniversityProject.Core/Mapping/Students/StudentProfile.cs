@@ -9,6 +9,8 @@ public partial class StudentProfile : Profile
         GetStudentByIdMapping();
         addStudentMapping();
         EditStudentCommandMapping();
+        CreateMap<UniversityProject.Domain.Entities.Student, UniversityProject.Core.Feature.Student.Queries.Results.GetStudentPaginatedListResponse>();
+
     }
 
 }

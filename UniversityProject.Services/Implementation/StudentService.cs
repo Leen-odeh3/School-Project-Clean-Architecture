@@ -77,7 +77,7 @@ public class StudentService : IStudentService
 
     public IQueryable<Student> FilterStudentPaginatedQuerable(StudentOrderingEnum orderingEnum, string search)
     {
-        var querable = _repo.GetTableNoTracking().AsQueryable();
+        var querable = _repo.GetTableNoTracking().Include(xx=>xx.Department).AsQueryable();
         if (search != null)
         {
             querable = querable.Where(x => x.Name.Contains(search) || x.Address.Contains(search));
