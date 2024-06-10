@@ -1,10 +1,10 @@
 ﻿
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SchoolProject.Api.Base;
-using SchoolProject.Core.Features.Instructors.Commands.Models;
-using SchoolProject.Core.Features.Instructors.Queries.Models;
-using SchoolProject.Data.AppMetaData;
+using UniversityProject.Api.Base;
+using UniversityProject.Core.Features.Instructors.Commands.Models;
+using UniversityProject.Core.Features.Instructors.Queries.Models;
+using UniversityProject.Data.AppMetaData;
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]

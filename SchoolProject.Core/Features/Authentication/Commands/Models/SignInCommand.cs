@@ -1,9 +1,17 @@
 ﻿
 using MediatR;
-using SchoolProject.Core.Bases;
-using SchoolProject.Data.Results;
+using 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Data.Results;
 
-namespace SchoolProject.Core.Features.Authentication.Commands.Models
+namespace UniversityProject.Core.Features.Authentication.Commands.Models
 {
     public class SignInCommand : IRequest<Response<JwtAuthResult>>
     {

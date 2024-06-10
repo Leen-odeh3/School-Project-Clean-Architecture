@@ -1,4 +1,14 @@
-﻿namespace SchoolProject.Core.Features.Authorization.Quaries.Results
+﻿namespace 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Authorization.Quaries.Results
 {
     public class GetRolesListResult
     {

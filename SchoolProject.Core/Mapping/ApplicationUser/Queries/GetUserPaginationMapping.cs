@@ -1,7 +1,10 @@
-﻿using SchoolProject.Core.Features.ApplicationUser.Queries.Results;
-using SchoolProject.Data.Entities.Identity;
+﻿using 
+    
+    
+    Project.Core.Features.ApplicationUser.Queries.Results;
+using UniversityProject.Data.Entities.Identity;
 
-namespace SchoolProject.Core.Mapping.ApplicationUser
+namespace UniversityProject.Core.Mapping.ApplicationUser
 {
     public partial class ApplicationUserProfile
     {

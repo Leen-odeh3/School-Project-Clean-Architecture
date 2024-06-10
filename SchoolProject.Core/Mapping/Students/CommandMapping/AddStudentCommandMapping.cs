@@ -1,7 +1,14 @@
-﻿using SchoolProject.Core.Features.Students.Commands.Models;
-using SchoolProject.Data.Entities;
+﻿using 
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Students.Commands.Models;
+using UniversityProject.Data.Entities;
 
-namespace SchoolProject.Core.Mapping.Students
+namespace UniversityProject.Core.Mapping.Students
 {
     public partial class StudentProfile
     {

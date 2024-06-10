@@ -1,9 +1,15 @@
 ﻿using MediatR;
-using SchoolProject.Core.Features.Students.Queries.Results;
-using SchoolProject.Core.Wrappers;
-using SchoolProject.Data.Enums;
+using 
+    
+    
+    
+    
+    
+    Project.Core.Features.Students.Queries.Results;
+using UniversityProject.Core.Wrappers;
+using UniversityProject.Data.Enums;
 
-namespace SchoolProject.Core.Features.Students.Queries.Models
+namespace UniversityProject.Core.Features.Students.Queries.Models
 {
     public class GetStudentPaginatedListQuery : IRequest<PaginatedResult<GetStudentPaginatedListResponse>>
     {

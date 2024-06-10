@@ -1,4 +1,12 @@
-﻿namespace SchoolProject.Core.Features.Department.Queries.Results
+﻿namespace 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Department.Queries.Results
 {
     public class GetDepartmentStudentListCountResults
     {

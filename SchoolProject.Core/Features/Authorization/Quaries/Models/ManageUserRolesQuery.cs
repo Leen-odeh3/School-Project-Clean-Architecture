@@ -1,8 +1,15 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
-using SchoolProject.Data.Results;
+using 
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Data.Results;
 
-namespace SchoolProject.Core.Features.Authorization.Quaries.Models
+namespace UniversityProject.Core.Features.Authorization.Quaries.Models
 {
     public class ManageUserRolesQuery : IRequest<Response<ManageUserRolesResult>>
     {

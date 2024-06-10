@@ -1,6 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace SchoolProject.Core.Wrappers
+namespace 
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Wrappers
 {
     public static class QueryableExtensions
     {

@@ -1,6 +1,12 @@
 ﻿using AutoMapper;
 
-namespace SchoolProject.Core.Mapping.ApplicationUser
+namespace 
+    
+    
+    
+    
+    
+    Project.Core.Mapping.ApplicationUser
 {
     public partial class ApplicationUserProfile : Profile
     {

@@ -1,6 +1,12 @@
-﻿using SchoolProject.Core.Wrappers;
+﻿using 
+    
+    
+    
+    
+    
+    Project.Core.Wrappers;
 
-namespace SchoolProject.Core.Features.Department.Queries.Results
+namespace UniversityProject.Core.Features.Department.Queries.Results
 {
     public class GetDepartmentByIDResponse
     {

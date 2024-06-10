@@ -1,7 +1,13 @@
-﻿using SchoolProject.Core.Features.Instructors.Commands.Models;
-using SchoolProject.Data.Entities;
+﻿using 
+    
+    
+    
+    
+    
+    Project.Core.Features.Instructors.Commands.Models;
+using UniversityProject.Data.Entities;
 
-namespace SchoolProject.Core.Mapping.Instructors
+namespace UniversityProject.Core.Mapping.Instructors
 {
     public partial class InstructorProfile
     {

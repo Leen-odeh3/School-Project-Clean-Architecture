@@ -1,7 +1,12 @@
-﻿using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
-using SchoolProject.Data.Entities.Identity;
+﻿using 
+    
+    
+    
+    
+    Project.Core.Features.ApplicationUser.Commands.Models;
+using UniversityProject.Data.Entities.Identity;
 
-namespace SchoolProject.Core.Mapping.ApplicationUser
+namespace UniversityProject.Core.Mapping.ApplicationUser
 {
     public partial class ApplicationUserProfile
     {

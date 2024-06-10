@@ -7,9 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SchoolProject.Data\SchoolProject.Data.csproj" />
-    <ProjectReference Include="..\SchoolProject.Infrustructure\SchoolProject.Infrustructure.csproj" />
-    <ProjectReference Include="..\SchoolProject.Service\SchoolProject.Service.csproj" />
+    <ProjectReference Include="..\
+					  
+
+
+
+
+
+Project.Data\UniversityProject.Data.csproj" />
+    <ProjectReference Include="..\UniversityProject.Infrustructure\UniversityProject.Infrustructure.csproj" />
+    <ProjectReference Include="..\UniversityProject.Service\UniversityProject.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Mvc;
-using SchoolProject.Api.Base;
-using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
-using SchoolProject.Core.Features.ApplicationUser.Queries.Models;
-using SchoolProject.Data.AppMetaData;
-namespace SchoolProject.Api.Controllers
+using UniversityProject.Api.Base;
+using UniversityProject.Core.Features.ApplicationUser.Commands.Models;
+using UniversityProject.Core.Features.ApplicationUser.Queries.Models;
+using UniversityProject.Data.AppMetaData;
+namespace UniversityProject.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

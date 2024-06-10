@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SchoolProject.Core.Bases;
+using UniversityProject.Core.Bases;
 using System.Net;
 
-namespace SchoolProject.Api.Base
+namespace UniversityProject.Api.Base
 {
     [ApiController]
     public class AppControllerBase : ControllerBase

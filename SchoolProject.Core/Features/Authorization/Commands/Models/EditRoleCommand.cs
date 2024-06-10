@@ -1,8 +1,16 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
-using SchoolProject.Data.DTOs;
+using 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Data.DTOs;
 
-namespace SchoolProject.Core.Features.Authorization.Commands.Models
+namespace UniversityProject.Core.Features.Authorization.Commands.Models
 {
     public class EditRoleCommand : EditRoleRequest, IRequest<Response<string>>
     {

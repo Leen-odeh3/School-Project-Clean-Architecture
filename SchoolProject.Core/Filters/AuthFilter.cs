@@ -2,10 +2,21 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using SchoolProject.Data.Entities.Identity;
-using SchoolProject.Service.AuthServices.Interfaces;
+using 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Data.Entities.Identity;
+using UniversityProject.Service.AuthServices.Interfaces;
 
-namespace SchoolProject.Core.Filters
+namespace UniversityProject.Core.Filters
 {
     public class AuthFilter : IAsyncActionFilter
     {

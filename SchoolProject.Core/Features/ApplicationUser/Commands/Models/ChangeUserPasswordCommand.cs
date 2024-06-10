@@ -1,7 +1,15 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
+using 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
 
-namespace SchoolProject.Core.Features.ApplicationUser.Commands.Models
+namespace UniversityProject.Core.Features.ApplicationUser.Commands.Models
 {
     public class ChangeUserPasswordCommand : IRequest<Response<string>>
     {

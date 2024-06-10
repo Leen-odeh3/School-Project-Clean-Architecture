@@ -1,9 +1,16 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Features.Authentication.Queries.Models;
-using SchoolProject.Core.Resources;
+using 
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Authentication.Queries.Models;
+using UniversityProject.Core.Resources;
 
-namespace SchoolProject.Core.Features.Authentication.Queries.Validators
+namespace UniversityProject.Core.Features.Authentication.Queries.Validators
 {
     public class ConfirmEmailValidator : AbstractValidator<ConfirmEmailQuery>
     {

@@ -1,10 +1,16 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using SchoolProject.Core.Behaviors;
+using 
+    
+    
+    
+    
+    
+    Project.Core.Behaviors;
 using System.Reflection;
 
-namespace SchoolProject.Core
+namespace UniversityProject.Core
 {
     public static class ModuleCoreDependencies
     {

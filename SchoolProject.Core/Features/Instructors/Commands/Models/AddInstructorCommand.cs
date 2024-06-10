@@ -1,8 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
-using SchoolProject.Core.Bases;
+using 
+    
+    Project.Core.Bases;
 
-namespace SchoolProject.Core.Features.Instructors.Commands.Models
+namespace UniversityProject.Core.Features.Instructors.Commands.Models
 {
     public class AddInstructorCommand : IRequest<Response<string>>
     {

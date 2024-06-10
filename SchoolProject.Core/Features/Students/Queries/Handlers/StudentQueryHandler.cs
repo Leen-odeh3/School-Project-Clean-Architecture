@@ -1,14 +1,19 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Students.Queries.Models;
-using SchoolProject.Core.Features.Students.Queries.Results;
-using SchoolProject.Core.Resources;
-using SchoolProject.Core.Wrappers;
-using SchoolProject.Service.Abstracts;
+using 
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Students.Queries.Models;
+using UniversityProject.Core.Features.Students.Queries.Results;
+using UniversityProject.Core.Resources;
+using UniversityProject.Core.Wrappers;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.Students.Queries.Handlers
+namespace UniversityProject.Core.Features.Students.Queries.Handlers
 {
     public class StudentQueryHandler : ResponseHandler,
                                        IRequestHandler<GetStudentListQuery, Response<List<GetStudentListResponse>>>,

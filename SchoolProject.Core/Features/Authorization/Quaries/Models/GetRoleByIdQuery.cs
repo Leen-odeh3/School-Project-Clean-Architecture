@@ -1,8 +1,14 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Authorization.Quaries.Results;
+using 
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Authorization.Quaries.Results;
 
-namespace SchoolProject.Core.Features.Authorization.Quaries.Models
+namespace UniversityProject.Core.Features.Authorization.Quaries.Models
 {
     public class GetRoleByIdQuery : IRequest<Response<GetRoleByIdResult>>
     {

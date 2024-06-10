@@ -1,4 +1,12 @@
-﻿namespace SchoolProject.Core.Features.ApplicationUser.Queries.Results
+﻿namespace 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.ApplicationUser.Queries.Results
 {
     public class GetUserByIdResponse
     {

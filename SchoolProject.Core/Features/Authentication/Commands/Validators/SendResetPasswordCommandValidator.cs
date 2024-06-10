@@ -1,9 +1,24 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Features.Authentication.Commands.Models;
-using SchoolProject.Core.Resources;
+using 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Authentication.Commands.Models;
+using UniversityProject.Core.Resources;
 
-namespace SchoolProject.Core.Features.Authentication.Commands.Validators
+namespace UniversityProject.Core.Features.Authentication.Commands.Validators
 {
     public class SendResetPasswordCommandValidator : AbstractValidator<SendResetPasswordCommand>
     {

@@ -1,11 +1,17 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Authentication.Queries.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Service.Abstracts;
+using 
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Authentication.Queries.Models;
+using UniversityProject.Core.Resources;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.Authentication.Queries.Handles
+namespace UniversityProject.Core.Features.Authentication.Queries.Handles
 {
     public class AuthenticationQueryHandler : ResponseHandler,
         IRequestHandler<AuthorizeUserQuery, Response<string>>,

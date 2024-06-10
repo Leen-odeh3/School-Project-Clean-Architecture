@@ -1,6 +1,14 @@
 ﻿using AutoMapper;
 
-namespace SchoolProject.Core.Mapping.Departments
+namespace 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Mapping.Departments
 {
     public partial class DepartmentProfile : Profile
     {

@@ -1,4 +1,12 @@
-﻿namespace SchoolProject.Core.Resources
+﻿namespace 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Resources
 {
     public static class SharedResourcesKeys
     {

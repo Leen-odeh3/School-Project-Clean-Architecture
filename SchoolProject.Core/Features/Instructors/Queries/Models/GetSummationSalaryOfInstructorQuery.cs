@@ -1,7 +1,12 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
+using 
+    
+    
+    
+    
+    Project.Core.Bases;
 
-namespace SchoolProject.Core.Features.Instructors.Queries.Models
+namespace UniversityProject.Core.Features.Instructors.Queries.Models
 {
     public class GetSummationSalaryOfInstructorQuery : IRequest<Response<decimal>>
     {

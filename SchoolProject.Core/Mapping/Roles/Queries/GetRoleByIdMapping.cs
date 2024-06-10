@@ -1,7 +1,15 @@
-﻿using SchoolProject.Core.Features.Authorization.Quaries.Results;
-using SchoolProject.Data.Entities.Identity;
+﻿using 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Authorization.Quaries.Results;
+using UniversityProject.Data.Entities.Identity;
 
-namespace SchoolProject.Core.Mapping.Roles
+namespace UniversityProject.Core.Mapping.Roles
 {
     public partial class RoleProfile
     {

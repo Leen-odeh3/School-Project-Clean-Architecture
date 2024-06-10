@@ -1,7 +1,12 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
+using 
+    
+    
+    
+    
+    Project.Core.Bases;
 
-namespace SchoolProject.Core.Features.Students.Commands.Models
+namespace UniversityProject.Core.Features.Students.Commands.Models
 {
     public class EditStudentCommand : IRequest<Response<string>>
     {

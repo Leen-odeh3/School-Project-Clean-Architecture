@@ -2,14 +2,14 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.ApplicationUser.Queries.Models;
-using SchoolProject.Core.Features.ApplicationUser.Queries.Results;
-using SchoolProject.Core.Resources;
-using SchoolProject.Core.Wrappers;
-using SchoolProject.Data.Entities.Identity;
+using Project.Core.Bases;
+using UniversityProject.Core.Features.ApplicationUser.Queries.Models;
+using UniversityProject.Core.Features.ApplicationUser.Queries.Results;
+using UniversityProject.Core.Resources;
+using UniversityProject.Core.Wrappers;
+using UniversityProject.Data.Entities.Identity;
 
-namespace SchoolProject.Core.Features.ApplicationUser.Queries.Handlers
+namespace UniversityProject.Core.Features.ApplicationUser.Queries.Handlers
 {
     public class UserQueryHandler : ResponseHandler,
          IRequestHandler<GetUserPaginationQuery, PaginatedResult<GetUserPaginationReponse>>,

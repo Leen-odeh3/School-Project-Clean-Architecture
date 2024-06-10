@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Instructors.Queries.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Service.Abstracts;
+using 
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Instructors.Queries.Models;
+using UniversityProject.Core.Resources;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.Instructors.Queries.Handlers
+namespace UniversityProject.Core.Features.Instructors.Queries.Handlers
 {
     public class InstructorQueryHandler : ResponseHandler,
                    IRequestHandler<GetSummationSalaryOfInstructorQuery, Response<decimal>>

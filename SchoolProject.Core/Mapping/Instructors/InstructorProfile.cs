@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
-namespace SchoolProject.Core.Mapping.Instructors
+namespace 
+    
+    Project.Core.Mapping.Instructors
 {
     public partial class InstructorProfile : Profile
     {
