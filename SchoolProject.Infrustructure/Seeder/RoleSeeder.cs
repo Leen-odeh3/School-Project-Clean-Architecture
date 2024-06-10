@@ -1,28 +1,27 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SchoolProject.Data.Entities.Identity;
+using SchoolProject.Domain.Entities.Identity;
 
 
-namespace SchoolProject.Infrustructure.Seeder
+namespace SchoolProject.Infrustructure.Seeder;
+
+public static class RoleSeeder
 {
-    public static class RoleSeeder
+    public static async Task SeedAsync(RoleManager<Role> _roleManager)
     {
-        public static async Task SeedAsync(RoleManager<Role> _roleManager)
+        var rolesCount = await _roleManager.Roles.CountAsync();
+        if (rolesCount<=0)
         {
-            var rolesCount = await _roleManager.Roles.CountAsync();
-            if (rolesCount<=0)
+
+            await _roleManager.CreateAsync(new Role()
             {
-
-                await _roleManager.CreateAsync(new Role()
-                {
-                    Name="Admin"
-                });
-                await _roleManager.CreateAsync(new Role()
-                {
-                    Name="User"
-                });
-            }
+                Name="Admin"
+            });
+            await _roleManager.CreateAsync(new Role()
+            {
+                Name="User"
+            });
         }
-
     }
+
 }

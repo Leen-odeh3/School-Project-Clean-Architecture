@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace SchoolProject.Data.Commons
+namespace SchoolProject.Domain.Commons
 {
     public class GeneralLocalizableEntity
     {

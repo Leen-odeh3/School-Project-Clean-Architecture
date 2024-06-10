@@ -8,7 +8,7 @@ using Microsoft.Extensions.Options;
 using SchoolProject.Core;
 using SchoolProject.Core.Filters;
 using SchoolProject.Core.MiddleWare;
-using SchoolProject.Data.Entities.Identity;
+using SchoolProject.Domain.Entities.Identity;
 using SchoolProject.Infrustructure;
 using SchoolProject.Infrustructure.Data;
 using SchoolProject.Infrustructure.Seeder;

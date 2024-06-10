@@ -2,7 +2,7 @@
 using SchoolProject.Api.Base;
 using SchoolProject.Core.Features.Authentication.Commands.Models;
 using SchoolProject.Core.Features.Authentication.Queries.Models;
-using SchoolProject.Data.AppMetaData;
+using SchoolProject.Domain.AppMetaData;
 
 namespace SchoolProject.Api.Controllers
 {
