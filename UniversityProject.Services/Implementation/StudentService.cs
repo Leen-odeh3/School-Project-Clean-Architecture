@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
 using UniversityProject.Domain.Entities;
+using UniversityProject.Domain.Enums;
 using UniversityProject.Domain.IGenericRepository;
+using UniversityProject.Infrustructure.GenericRepository;
 using UniversityProject.Services.Abstracts;
 
 namespace UniversityProject.Services.Implementation;
@@ -71,5 +73,31 @@ public class StudentService : IStudentService
             Log.Error(ex.Message);
             return "Falied";
         }
+    }
+
+    public IQueryable<Student> FilterStudentPaginatedQuerable(StudentOrderingEnum orderingEnum, string search)
+    {
+        var querable = _repo.GetTableNoTracking().AsQueryable();
+        if (search != null)
+        {
+            querable = querable.Where(x => x.Name.Contains(search) || x.Address.Contains(search));
+        }
+        switch (orderingEnum)
+        {
+            case StudentOrderingEnum.StudentID:
+                querable = querable.OrderBy(x => x.StudentID);
+                break;
+            case StudentOrderingEnum.Name:
+                querable = querable.OrderBy(x => x.Name);
+                break;
+            case StudentOrderingEnum.Address:
+                querable = querable.OrderBy(x => x.Address);
+                break;
+            case StudentOrderingEnum.DepartmentID:
+                querable = querable.OrderBy(x => x.Department.DepartmentID);
+                break;
+        }
+
+        return querable;
     }
 }

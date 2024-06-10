@@ -1,4 +1,5 @@
 ﻿using UniversityProject.Domain.Entities;
+using UniversityProject.Domain.Enums;
 
 namespace UniversityProject.Services.Abstracts;
 public interface IStudentService
@@ -12,4 +13,6 @@ public interface IStudentService
 
     public Task<string> EditStudentAsync(Student student);
     public Task<string> DeleteStudentAsync(Student student);
+    public IQueryable<Student> FilterStudentPaginatedQuerable(StudentOrderingEnum orderingEnum, string search);
+
 }

@@ -43,5 +43,11 @@ public class StudentController : AppControllerBase
     {
         return NewResult(await Mediator.Send(new DeleteStudentCommand(id)));
     }
+    [HttpGet(StudentRouting.Paginated)]
+    public async Task<IActionResult> Paginated([FromQuery] GetStudentPaginatedListQuery query)
+    {
+        var response = await Mediator.Send(query);
+        return Ok(response);
+    }
 
 }
