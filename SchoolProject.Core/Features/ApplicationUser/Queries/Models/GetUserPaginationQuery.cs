@@ -1,8 +1,10 @@
 ﻿using MediatR;
-using SchoolProject.Core.Features.ApplicationUser.Queries.Results;
-using SchoolProject.Core.Wrappers;
+using 
+    
+    Project.Core.Features.ApplicationUser.Queries.Results;
+using UniversityProject.Core.Wrappers;
 
-namespace SchoolProject.Core.Features.ApplicationUser.Queries.Models
+namespace UniversityProject.Core.Features.ApplicationUser.Queries.Models
 {
     public class GetUserPaginationQuery : IRequest<PaginatedResult<GetUserPaginationReponse>>
     {

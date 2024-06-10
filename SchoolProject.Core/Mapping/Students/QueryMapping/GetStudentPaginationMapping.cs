@@ -1,7 +1,13 @@
-﻿using SchoolProject.Core.Features.Students.Queries.Results;
-using SchoolProject.Data.Entities;
+﻿using 
+    
+    
+    
+    
+    
+    Project.Core.Features.Students.Queries.Results;
+using UniversityProject.Data.Entities;
 
-namespace SchoolProject.Core.Mapping.Students
+namespace UniversityProject.Core.Mapping.Students
 {
     public partial class StudentProfile
     {

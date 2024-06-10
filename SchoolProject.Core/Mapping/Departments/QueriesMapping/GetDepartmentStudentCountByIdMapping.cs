@@ -1,8 +1,18 @@
-﻿using SchoolProject.Core.Features.Department.Queries.Models;
-using SchoolProject.Core.Features.Department.Queries.Results;
-using SchoolProject.Data.Entities.Procedures;
+﻿using 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Department.Queries.Models;
+using UniversityProject.Core.Features.Department.Queries.Results;
+using UniversityProject.Data.Entities.Procedures;
 
-namespace SchoolProject.Core.Mapping.Departments
+namespace UniversityProject.Core.Mapping.Departments
 {
     public partial class DepartmentProfile
     {

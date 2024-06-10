@@ -1,4 +1,13 @@
-﻿namespace SchoolProject.Core.Wrappers
+﻿namespace 
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Wrappers
 {
     public class PaginatedResult<T>
     {

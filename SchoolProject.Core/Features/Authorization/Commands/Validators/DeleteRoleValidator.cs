@@ -1,10 +1,18 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Features.Authorization.Commands.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Service.Abstracts;
+using 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Authorization.Commands.Models;
+using UniversityProject.Core.Resources;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.Authorization.Commands.Validators
+namespace UniversityProject.Core.Features.Authorization.Commands.Validators
 {
     public class DeleteRoleValidator : AbstractValidator<DeleteRoleCommand>
     {

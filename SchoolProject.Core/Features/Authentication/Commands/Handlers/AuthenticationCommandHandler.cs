@@ -1,14 +1,20 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Authentication.Commands.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Data.Entities.Identity;
-using SchoolProject.Data.Results;
-using SchoolProject.Service.Abstracts;
+using 
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Authentication.Commands.Models;
+using UniversityProject.Core.Resources;
+using UniversityProject.Data.Entities.Identity;
+using UniversityProject.Data.Results;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
+namespace UniversityProject.Core.Features.Authentication.Commands.Handlers
 {
     public class AuthenticationCommandHandler : ResponseHandler,
         IRequestHandler<SignInCommand, Response<JwtAuthResult>>,

@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Localization;
 using UniversityProject.Core.Resources;
 
-namespace SchoolProject.Core.Bases;
+namespace 
+    Project.Core.Bases;
 
 public class ResponseHandler
 {

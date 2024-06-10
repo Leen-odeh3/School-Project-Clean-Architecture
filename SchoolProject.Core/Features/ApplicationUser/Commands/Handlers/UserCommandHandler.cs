@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Data.Entities.Identity;
-using SchoolProject.Service.Abstracts;
+using UniversityProject.Core.Bases;
+using UniversityProject.Core.Features.ApplicationUser.Commands.Models;
+using UniversityProject.Core.Resources;
+using UniversityProject.Data.Entities.Identity;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
+namespace UniversityProject.Core.Features.ApplicationUser.Commands.Handlers
 {
     public class UserCommandHandler : ResponseHandler,
         IRequestHandler<AddUserCommand, Response<string>>,

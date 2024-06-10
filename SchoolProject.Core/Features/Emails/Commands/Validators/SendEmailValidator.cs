@@ -1,9 +1,16 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Features.Emails.Commands.Models;
-using SchoolProject.Core.Resources;
+using 
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.Emails.Commands.Models;
+using UniversityProject.Core.Resources;
 
-namespace SchoolProject.Core.Features.Emails.Commands.Validators
+namespace UniversityProject.Core.Features.Emails.Commands.Validators
 {
     public class SendEmailValidator : AbstractValidator<SendEmailCommand>
     {

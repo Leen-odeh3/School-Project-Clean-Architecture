@@ -1,7 +1,14 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
+using 
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
 
-namespace SchoolProject.Core.Features.Authentication.Commands.Models
+namespace UniversityProject.Core.Features.Authentication.Commands.Models
 {
     public class ResetPasswordCommand : IRequest<Response<string>>
     {

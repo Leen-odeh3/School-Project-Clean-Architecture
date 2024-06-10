@@ -1,7 +1,14 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
+using 
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
 
-namespace SchoolProject.Core.Features.Authorization.Commands.Models
+namespace UniversityProject.Core.Features.Authorization.Commands.Models
 {
     public class DeleteRoleCommand : IRequest<Response<string>>
     {

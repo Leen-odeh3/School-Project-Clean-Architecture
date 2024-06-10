@@ -1,12 +1,18 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using SchoolProject.Core.Bases;
+using 
+    
+    
+    
+    
+    
+    Project.Core.Bases;
 using Serilog;
 using System.Net;
 using System.Text.Json;
 
-namespace SchoolProject.Core.MiddleWare
+namespace UniversityProject.Core.MiddleWare
 {
     public class ErrorHandlerMiddleware
     {

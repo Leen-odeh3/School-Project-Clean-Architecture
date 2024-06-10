@@ -1,17 +1,25 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Department.Queries.Models;
-using SchoolProject.Core.Features.Department.Queries.Results;
-using SchoolProject.Core.Resources;
-using SchoolProject.Core.Wrappers;
-using SchoolProject.Data.Entities;
-using SchoolProject.Data.Entities.Procedures;
-using SchoolProject.Service.Abstracts;
+using 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Department.Queries.Models;
+using UniversityProject.Core.Features.Department.Queries.Results;
+using UniversityProject.Core.Resources;
+using UniversityProject.Core.Wrappers;
+using UniversityProject.Data.Entities;
+using UniversityProject.Data.Entities.Procedures;
+using UniversityProject.Service.Abstracts;
 using System.Linq.Expressions;
 
-namespace SchoolProject.Core.Features.Department.Queries.Handlers
+namespace UniversityProject.Core.Features.Department.Queries.Handlers
 {
     public class DepartmentQueryHandler : ResponseHandler,
          IRequestHandler<GetDepartmentByIDQuery, Response<GetDepartmentByIDResponse>>,

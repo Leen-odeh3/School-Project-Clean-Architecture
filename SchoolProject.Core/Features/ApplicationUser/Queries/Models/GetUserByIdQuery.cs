@@ -1,8 +1,22 @@
 ﻿using MediatR;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.ApplicationUser.Queries.Results;
+using 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.ApplicationUser.Queries.Results;
 
-namespace SchoolProject.Core.Features.ApplicationUser.Queries.Models
+namespace UniversityProject.Core.Features.ApplicationUser.Queries.Models
 {
     public class GetUserByIdQuery : IRequest<Response<GetUserByIdResponse>>
     {

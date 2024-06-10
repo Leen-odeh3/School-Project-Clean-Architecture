@@ -1,6 +1,11 @@
 ﻿using AutoMapper;
 
-namespace SchoolProject.Core.Mapping.Roles
+namespace 
+    
+    
+    
+    
+    Project.Core.Mapping.Roles
 {
     public partial class RoleProfile : Profile
     {

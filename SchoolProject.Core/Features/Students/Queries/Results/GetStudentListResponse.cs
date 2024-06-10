@@ -1,4 +1,9 @@
-﻿namespace SchoolProject.Core.Features.Students.Queries.Results
+﻿namespace 
+    
+    
+    
+    
+    Project.Core.Features.Students.Queries.Results
 {
     public class GetStudentListResponse
     {

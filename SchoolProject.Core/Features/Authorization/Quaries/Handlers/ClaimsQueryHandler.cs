@@ -1,14 +1,29 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Authorization.Quaries.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Data.Entities.Identity;
-using SchoolProject.Data.Results;
-using SchoolProject.Service.Abstracts;
+using 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Authorization.Quaries.Models;
+using UniversityProject.Core.Resources;
+using UniversityProject.Data.Entities.Identity;
+using UniversityProject.Data.Results;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.Authorization.Quaries.Handlers
+namespace UniversityProject.Core.Features.Authorization.Quaries.Handlers
 {
     public class ClaimsQueryHandler : ResponseHandler,
         IRequestHandler<ManageUserClaimsQuery, Response<ManageUserClaimsResult>>

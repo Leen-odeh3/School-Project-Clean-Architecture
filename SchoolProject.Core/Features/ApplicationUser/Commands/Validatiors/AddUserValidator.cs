@@ -1,9 +1,17 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
-using SchoolProject.Core.Resources;
+using 
+    
+    
+    
+    
+    
+    
+    
+    Project.Core.Features.ApplicationUser.Commands.Models;
+using UniversityProject.Core.Resources;
 
-namespace SchoolProject.Core.Features.ApplicationUser.Commands.Validatiors
+namespace UniversityProject.Core.Features.ApplicationUser.Commands.Validatiors
 {
     public class AddUserValidator : AbstractValidator<AddUserCommand>
     {

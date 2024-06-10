@@ -1,4 +1,10 @@
-﻿namespace SchoolProject.Core.Resources
+﻿namespace 
+    
+    
+    
+    
+    
+    Project.Core.Resources
 {
     public class SharedResources
     {

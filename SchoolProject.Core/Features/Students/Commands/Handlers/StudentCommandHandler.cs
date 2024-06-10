@@ -1,13 +1,19 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.Students.Commands.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Data.Entities;
-using SchoolProject.Service.Abstracts;
+using 
+    
+    
+    
+    
+    
+    Project.Core.Bases;
+using UniversityProject.Core.Features.Students.Commands.Models;
+using UniversityProject.Core.Resources;
+using UniversityProject.Data.Entities;
+using UniversityProject.Service.Abstracts;
 
-namespace SchoolProject.Core.Features.Students.Commands.Handlers
+namespace UniversityProject.Core.Features.Students.Commands.Handlers
 {
     public class StudentCommandHandler : ResponseHandler,
                                        IRequestHandler<AddStudentCommand, Response<string>>,
